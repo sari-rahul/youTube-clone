@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import SideBar from './components/SideBar/SideBar';
 import { Container } from 'react-bootstrap';
@@ -6,16 +6,25 @@ import HomeScreen from './screens/HomeScreen/HomeScreen';
 import './_app.scss';
 
 const App = () => {
+
+  const[sidebar,toggleSideBar]= useState(false);
+
+
+  const handleToggleSideBar=()=>toggleSideBar(value=>!value)
+
   return (
-    <div>
-      <Header/>
+    <>
+      <Header handleToggleSideBar={handleToggleSideBar}/>
       <div className='app__container border border-info'>
-        <SideBar/>
+        <SideBar 
+          sidebar={sidebar} 
+          handleToggleSideBar={handleToggleSideBar}
+        />
       <Container fluid className='app__main border border-warning'>
         <HomeScreen/>
       </Container>
       </div>
-    </div>
+    </>
   );
 };
 

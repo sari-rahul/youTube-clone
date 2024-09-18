@@ -81,5 +81,8 @@
         &__logo{
             display: none;
         }
+        &__icons >*:not(img){
+            display: none;
+        }
     }
 }

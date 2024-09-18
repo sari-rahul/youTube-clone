@@ -5,11 +5,14 @@ import { FaBars } from 'react-icons/fa';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { MdNotifications, MdApps } from 'react-icons/md';
 
-const Header = () => {
+const Header = ({handleToggleSideBar}) => {
   return (
     <div className='border border-dark header' >
-      <FaBars classname='header__menu' size={26} />
-
+      <FaBars className='header__menu' 
+        size={26}
+        onClick={()=>handleToggleSideBar()} 
+      />
+        
       <img src="https://as2.ftcdn.net/v2/jpg/03/22/05/03/1000_F_322050377_yW8AC9NF5q3m9cB1aYw2n0HBWcmozJDo.jpg" 
         alt="" className='header__logo'/>
       <form>
